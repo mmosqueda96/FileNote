@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Express Claims Outbound Tool</title>
+    </head>
+
+    <body>
+        <div>
+            <script type="text/javascript"> //This scrip will make sure that the required fields are fill, if not, it will show a message asking to complete fields
+                function checkMyFields() {
+                    var MyTXT1
+                    var MyTXT2
+                    var MyTXT3
+                    var MyTXT4
+
+                    MyTXT1 = document.Fin.txt1.value; //Task Worked
+                    MyTXT2 = document.Fin.txt2.value; //Actions Taken to Resolve the Task
+                    MyTXT3 = document.Fin.txt3.value; //Task Outcome
+                    MyTXT4 = document.Fin.txt4.value; //Comments and Follow Up
+
+                    //if function to return message to fill required fields
+                    if (MyTXT1 == "") {
+                        alert("Please Indicae What Task(s) you worked.");
+                        return false;
+                    }
+                    if (MyTXT2 == "") {
+                        alert("Please Indicate What Actions Were Taken");
+                        return false;
+                    }
+                    if (MyTXT3 == "") {
+                        alert("Please Indicate The Task Outcome");
+                        return false;
+                    }
+                    if (MyTXT4 == "") {
+                        alert("Please Add Nesessary Comments and FolloW Ups");
+                        return false;
+                    }
+                }
+            </script>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <div>
+                <div>Express Claim Outbound Tool</div>
+
+                <br>
+                <center>
+                    <table>
+                        <form name="Fin" id="Fin" method="post"> <!--missing compile.asp to compile file-->
+                            <tr align="left">
+                                <td>Task(s) Worked:*</td>
+                                <td><textarea type="text" name="txt1" cols="40" rows="5" id="txt1"></textarea></td>
+                            </tr>
+                            <tr align="left">
+                                <td>Actions Taken to Resolve the Task(s):*</td>
+                                <td><textarea type="text" name="txt2" cols="40" rows="5" id="txt2"></textarea></td>
+                            </tr>
+                            <tr align="left">
+                                <td>Task(s) Ouutcome:*</td>
+                                <td><textarea type="text" name="txt3" cols="40" rows="5" id="txt3"></textarea></td>
+                            </tr>
+                            <tr align="left">
+                                <td>Comments and Follow Ups:*</td>
+                                <td><textarea type="text" name="txt4" cols="40" rows="5" id="txt4"></textarea></td>
+                            </tr>
+                            <tr align="left">
+                                <td>Items with a "*" are required.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="2" align="center">
+                                    <input id="CompileButton" type="submit" value="Compile File Note" onclick="return checkMyFields()">
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </center>
+            </div>
+        </div>
+    </body>
+</html>
